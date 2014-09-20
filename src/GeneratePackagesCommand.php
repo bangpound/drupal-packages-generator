@@ -11,6 +11,7 @@ use Exception;
 use RollingCurl\RollingCurl;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class GeneratePackagesCommand extends Command
@@ -26,6 +27,7 @@ class GeneratePackagesCommand extends Command
           array(
             new InputArgument('output-dir', InputArgument::OPTIONAL, 'The directory to output the package file(s) to', getcwd()),
             new InputArgument('projects', InputArgument::IS_ARRAY, 'The projects to include in the package.json file. If no projects are specified then all projects are included', array()),
+            new InputOption('api-versions', 'api', InputOption::VALUE_IS_ARRAY | InputOption::VALUE_OPTIONAL, 'API versions to generate', array(6, 7, 8))
           )
         );
     }
