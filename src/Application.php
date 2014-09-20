@@ -4,6 +4,7 @@
 namespace kasperg\DrupalPackagesGenerator;
 
 use \Symfony\Component\Console\Application as BaseApplication;
+use Symfony\Component\Console\Input\InputInterface;
 
 class Application extends BaseApplication {
 
